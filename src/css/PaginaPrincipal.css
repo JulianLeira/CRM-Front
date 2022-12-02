@@ -1,0 +1,24 @@
+.sidebar{
+    background-color: antiquewhite;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 5px;
+    
+}
+.linkbar{
+    margin: 2rem auto;
+    text-decoration: none;
+    color: #008CBA;
+}
+.ListaCliOpp{
+    background-color: #FAE6B1;
+    padding: 10px;
+    margin: 10px;
+}
+.CliOppContent{
+    display: flex;
+    justify-content: center;
+}
+.tablacliop td{
+    padding: 10px;
+}

@@ -1,25 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import PaginaPrincipal from './components/PaginaPrincipal';
+import ClientAdmin from './components/ClientAdmin';
+import NewCliOpp from './components/NewCliOpp';
+import NewContact from './components/NewContact';
 function App() {
-  return (
+  const [blogPost, setBlogPost] = useState()
+  
+  // useEffect(() => {
+  //   fetch("http://localhost:8080/ClientOpp")
+  //     .then((res) => {return res.json()})
+  //     .then((data) => setBlogPost(data))
+  // }, [])
+  
+  // if (!blogPost) {
+  //   return (
+  //     <h1>
+  //       Loading...
+  //     </h1>
+  //   )
+  // }
+  return ( 
+    <BrowserRouter >
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/paginaPrincipal" element={<PaginaPrincipal/>}/>
+        <Route path="/ClientAdmin/:idClientOpp" element={<ClientAdmin/>}/>
+        <Route path="/NewCliOpp" element={<NewCliOpp/>}/>
+        <Route path="/NewContact/:idClientOpp" element={<NewContact/>}/>
+      </Routes> 
     </div>
+    </BrowserRouter>
   );
+
 }
 
 export default App;
